@@ -1,0 +1,54 @@
+<!-- HTML5 문서임을 브라우저에 알려주는 선언 -->
+<!DOCTYPE html> 
+
+<!-- 문서의 최상위(root) 요소, lang은 검색엔진/스크린리더용 언어 설정 -->
+<html lang="ko">
+    
+    <!-- head 쪽 데이터는 화면에 보이지 않는 메타 데이터 부분이다 -->
+    <head>  
+
+        <!-- 문자 인코딩 설정 character set = Encoding (한글 깨짐 방지, 거의 무조건 UTF-8 사용) -->
+        <meta charset="UTF-8">  
+        <!-- 모바일/태블릿에서 화면 크기와 배율을 제어 (반응형 웹의 필수 요소) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- meta의 subject/keysords/description은 SEO를 위한 것이다. (검색 엔진 최적화) -->
+        <meta name="subject" content="에스트래픽 테스트">
+        <meta name="keywords" content="여성의류, 치마, 원피스">
+        <meta name="description" content="2026년 새롭게 단장한 시연패션의 쇼핑몰로 여성 의류 중 스커트 브랜드인 셔니를 판매하고 있습니다.">
+        <meta name="">
+
+        <!-- 브라우저 Tab 제목 + 검색엔진 결과 제목 -->
+        <title>연습01</title>   
+
+        <!-- 외부 CSS 파일을 연결하는 태그 (href에 css 파일 경로 지정) -->
+        <link rel="stylesheet" href="style.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+        <!-- 문서 내부에서 사용하는 CSS 작성하는 영역 (현재 작성하는 페이지에만 적용하고 싶을 때 쓴다)-->
+        <style>
+            body, html {
+                font-family: "Noto Sans KR", sans-serif;
+            }
+        </style>
+
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <meta name="msapplication-TileColor" content="#fff">
+        <meta name="theme-color" content="#fff">
+
+        <script>
+            // HTML이 아직 로딩되기 전에 실행되므로
+            // 아래 id="tit" 요소를 찾지 못해 정상 동작하지 않음
+            document.getElementById("tit").innerHTML="<strong>연습문서1</strong>";
+        </script>
+    </head>
+    
+    <body>  <!-- 실제로 브라우저 화면에 표시되는 콘텐츠 영역 -->
+        <h1 id="tit"></h1>
+        <script>
+            document.getElementById("tit").innerHTML="<em>연습문서1</em>";
+        </script>
+        
+    </body>
+</html>

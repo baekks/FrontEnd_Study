@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 관련 태그</title>
+</head>
+<body>
+    <h3>IMAGE</h3>
+    <!--
+        src : 필수 속성, HTML 문서에 표시할 이미지 파일의 경로 / 이름
+        alt : 이미지가 표시되지 않을 때 대체 표시될 text
+        title : 보조 속성으로 이미지 위에 마우스를 올렸을 때 나오는 text
+    -->
+    <img src="image.png" alt="모코코가 인사하는 사진" title="'로스트아크'의 공식 마스코트인 모코코입니다.">
+    <hr>
+
+    <!--
+        ./ : 점 하나는 현재 디렉터리
+        ../ : 점 두개는 상위 디렉터리
+    -->
+    <h4>현재 위치의 하위 폴더 안에 이미지가 있는 경우</h4>
+    <img src="./images/images.png" alt="모코코가 등장하는 사진" width="300px">
+    <hr>
+    <h4>상위 폴더에 있는 이미지</h4>
+    <img src="../img/download.png" alt="모코코가 억울해하는 사진">
+    <br><hr><br>
+    
+    <h3>VIDEO</h3>
+    <!--
+        autoplay : 자동재생
+        controls : 재생바
+        width/height : 가로 세로 조정
+        poster : 썸네일
+        loop : 반복재생 무한대는 loop만 쓰기
+        muted : 음소거
+    -->
+    <video src="./video01.mp4" autoplay controls width="400px" poster="./image.png" loop="3" muted></video>
+
+    <video autoplay controls width="600px" poster="./image.png" loop="3" muted>
+        <source type="video/mp4" src="./video01.mp4">
+        <source type="video/webm" src="./video01.webm">
+        <source type="video/ogg" src="./video01.ogv">
+        현재 웹 브라우저에서는 비디오 기능이 제공되지 않습니다.
+    </video>
+    <hr>
+
+    <h3>AUDIO</h3>
+    <audio src="./audio01.mp3"  controls loop muted></audio>
+
+    <audio autoplay controls loop>
+        <source type="audio/mp3" src="./audio01.mp3">
+        <source type="audio/wav" src="./audio01.wav">
+        <source type="audio/ogg" src="./audio01.ogg">
+    </audio>
+    <hr>
+
+    <h3>EMBED</h3>
+    <embed src="java_basic.pdf" type="application/pdf" width="600" height="900">
+    <hr>
+
+    <h3>OBJECT</h3>
+    <object data="java_basic.pdf" type="application/pdf" width="600" height="500">
+        <p><a href="java_basic.pdf" download>PDF 다운로드</a></p>
+    </object>
+    <hr>
+
+    <h3>IFRAME - 유튜브</h3>
+    <iframe width="1396" height="785" src="https://www.youtube.com/embed/Jv4ZTBt-lDI" title="[로스트아크] 4K | 그림자 레이드,  &quot;고통의 마녀, 세르카&quot; Teaser | LOST ARK - Shadow Raid &quot;Serca, Malefica Doloris&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <hr>
+
+    <h3>IFRAME - INNER PAGE</h3>
+    <iframe src="https://www.notion.so/2dc3bc0ba132800b8206e233f9d37981" width="600" height="400" frameborder="0"></iframe>
+    <hr>
+
+    <h3>IFRAME - IMAGE</h3>
+    <iframe src="./image.png" frameborder="0" width="600" height="800"></iframe>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>테이블 태그</title>
+    </head>
+    <body>
+        <h1>표 관련 태그</h1>
+        <ul>
+            <li>★table : 테이블 메인 태그★</li>
+            <li>caption : 테이블의 제목</li>
+            <li>★thead : 테이블의 첫 행(열머리글 영역)★</li>
+            <li>tbody : 테이블의 데이터 그룹</li>
+            <li>tfoot : 테이블의 통계와 같은 바닥글</li>
+            <hr>
+            <li>★tr : 한 줄의 시작과 끝을 의미★</li>
+            <li>★th : 열 이름(컬럼명)★</li>
+            <li>★td : 테이블 데이터★</li>
+            <li>
+                <strong>태그 간 관계</strong>
+                <ol>
+                    <li>table</li>
+                    <li>caption, thead, ★tbody, tfoot</li>
+                    <li>tr</li>
+                    <li>★th, ★td</li>
+                </ol>
+            </li>
+        </ul>
+        <hr>
+        <table border="1">
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+        </table>
+        <hr>
+        <table border="1" cellpadding="5" cellspacing="0" width="800" style="text-align: center;">
+            <caption>에스트래픽 팀별 점수 분포</caption>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>팀명</th>
+                    <th>이름</th>
+                    <th>점수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">1</td>
+                    <td colspan="2"><strong>주차요금정산시스템</strong></td>
+                    <td rowspan="2">100</td>
+                </tr>
+                <tr>
+                    <td>All Time Tabaco</td>
+                    <td>고문식, 백경서, 최동윤</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">2</td>
+                    <td colspan="2"><strong>자율주행</strong></td>
+                    <td rowspan="2">95</td>
+                </tr>
+                <tr>
+                    <td>Hello! World!</td>
+                    <td>김민진, 박재웅, 안민수, 최금란</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">3</td>
+                    <td colspan="2"><strong>모빌리티</strong></td>
+                    <td rowspan="2">90</td>
+                </tr>
+                <tr>
+                    <td>Hello~ Python~</td>
+                    <td>김승민, 박주환, 유환희, 최정민</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">4</td>
+                    <td colspan="2"><strong>MaaS</strong></td>
+                    <td rowspan="2">85</td>
+                </tr>
+                <tr>
+                    <td>Hello? HTML?</td>
+                    <td>김진수, 박지영, 전보경</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">총 팀수 : 4팀, 총 점수 : 370점</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </body>
+</html>

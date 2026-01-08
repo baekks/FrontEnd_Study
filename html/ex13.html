@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EMMET(Zen-Coding)</title>
+    </head>
+    <body>
+        <h2>1. 기본 요소 생성</h2>
+        <p>
+            div, p , ul 등 태그만 입력하고 Tab을 누르면, 자동으로 열고 닫는 개폐 태그와 기본속성이 출력되는 방식
+        </p>
+        <p>
+            모든 EMMET 코딩은 띄워쓰기 할 수 없음. 단, `{` 와 `}` 는 내용은 띄워쓰기 할 수 있음
+        </p>
+        <hr>
+
+        <h2>2. ID(#)나 Class(.)를 부여하여 생성</h2>
+        <p>
+            아이디 형태를 생성하는 경우는 해당 요소의 뒤에 #(아이디) 기호를 붙인다.
+                ex) div#header, a#logom, a#
+
+        </p>
+        <p>
+            클래스 형태를 생성하는 경우는 해당 요소(태그)의 뒤에 .(클래스) 기호를 붙인다.
+                ex) nav.gnb, span.red_text등 
+        </p>
+        <hr>
+
+        <h2>3. 부모 자식(&gt) 관계 구조 생성</h2>
+        <p>
+            부모 자식 관계를 생성할 때는 상하 관계를 &gt; 로 구분하여 생성함
+                ex) div>ul>li>a, nav.gnb>ul>li>a 등 
+            <code>
+                <nav class="gnb">
+                    <ul>
+                        <li><a href=""></a></li>
+                    </ul>
+                </nav>
+            </code>
+        </p>
+        <hr>
+
+        <h2>4. 형제(+) 요소 생성</h2>
+        <p>
+            형제 요소 생성할 때는 전후 관계를 + 로 구분하여 생성함.
+                ex) span+a, div+p
+        </p>
+        <hr>
+
+        <h2>5. 반복 요소(*) 및 넘버링($)</h2>
+        <p>
+            반복 요소는 *로 횠수를 나타내며, 넘버링은 $로 기입함.
+                ex) ul>li*5>a{Menu$}, ul>li>a*5{Menu$} 등
+        </p>
+        <hr>
+
+        <h2>6. 그룹화 => ()</h2>
+        <p>
+            복잡한 구조에서 같은 부모를 갖는 것끼리 묶을 때를 그룹화를 하며,
+            소괄호 () 로 다른 것과 분리하여 그룹화한다.
+                ex) header>(nav.gnb>ul>li*4>a{main$})+(nav.tnb>p>a{top$}*3)
+                    header>nav.gnb>ul>li*4>a{main$}+ul.sub>p>a{sub$}*3
+        </p>
+        <hr>
+
+        <h2>7. 태그의 속성 생성</h2>
+        <p>
+            태그의 속성을 부여하여 생성하는 경우에는 태그[속성=값] 형태로 생성함.
+                ex) img[title="이미지"], input
+        </p>
+        <hr>
+
+        <h2>8. 텍스트(내용) 추가</h2>
+        <p>
+            태그의 열고 닫는 중간에 들어갈 내용을 미리 기입할 경우에는 중괄호{} 로 감싼다.
+                ex) a.sns{소셜$}*4, section.page*4>h2.page_title{$페이지 제목}
+        </p>
+    </body>
+</html>

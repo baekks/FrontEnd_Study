@@ -1,149 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS 지정 방식</title>
-    <!-- 외부 스타일 지정 -->
-    <link rel="stylesheet" href="ex02_style.css">
-    <style>
-        /* 내부 스타일*/
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS 지정 방식</title>
+        <!-- 외부 스타일 지정 -->
+        <link rel="stylesheet" href="style.css">
+        <style>
+        /* 내부 스타일 지정 */
         h2 { font-size: 64px; }
         h3 { font-size: 50px; }
         h4 { font-size: 32px; }
-        h5 { font-size: 20px; }
-        h6 { font-size: 12px; }
-        h2.title {
-            box-shadow: 1px 1px 1px deeppink, 2px 2px 2px pink, 3px 3px 3px hotpink;
-            color: gold; /* 인라인으로 스타일 지정해서 적용이 안됨 */
-        }
+        h5 { font-size: 16px; }
+        h6 { font-size: 12px; } 
+        h2.title { box-shadow: 1px 1px 1px #000, 2px 2px 2px #111, 3px 3px 3px #222; 
+        color: gold; }
         h4 { color: gold; }
         .tit { color: red; }
-        #item_tit { color: ; }
+        #item_tit { color: deeppink; }
         .tit { color: deepskyblue; }
         h4 { color: silver; }
-        .arc li {}
-        .menu > li {}
-    </style>
-</head>
-<body>
-    <div>
-        <!-- 인라인 스타일 방식 -->
-        <h2 class="title" style="color: deeppink;">Siyeon's Homepage</h2>
-        <h3 class="title">Main Page</h3>
-    </div>
-    <hr>
-
-    <h3>스타일 지정 방식</h3>
-    <ul>
-        <li>Inline Style(인라인 스타일 지정 방식) : 해당 요소에 style 속성으로 직접 스타일을 지정</li>
-        <li>Internal Style(내부 스타일 지정 방식) : 현재 문서에 style 태그 내에 선택자를 이용하여 스타일을 부여하는 방식</li>
-        <li>External Style(외부 스타일 지정 방식) : 별ㄷ의 외부 스타일 문서(CSS 파일)를 link로 연결하여 스타일을 지정하는 방식</li>
-    </ul>
-    <hr>
-
-    <h3>선택자(Selector)</h3>
-    <p>
-        스타일을 부여할 대상을 의미하며, 아이디, 클래스, 태그, 계층 등의 정보를 활용해 선택하여 스타일을 부여할 수 있게 한다.
-    </p>
-    <hr>
-
-    <h4 id="item_tit" class="tit">기본 선택자</h4>
-    <ul>
-        <li>*             : 전체 선택자로 스타일 부여할 요소가 모든 태그</li>
-        <li>태그(element) : 해당 태그를 선택하여 스타일 부여</li>
-        <li>클래스(class) : .(점)을 구분자로 하는 선택자로 같은 스타일을 적용</li>
-        <li>아이디(id)    : #(샵)을 구분자로 하는 선택자로 해당 문서에 유일하게 있는 요소에 스타일 적용</li>
-    </ul>
-    <p>
-        아이디 > 클래스 > 태그 순으로 우선 순위가 있으며, 선택자가 같고, 속성이 같은 경우 마지막에 설정한 속성이 적용됨.
-    </p>
-    <hr>
-
-    <h4>계층 선택자</h4>
-    <div class="arc">
-        <ul class="menu">
-            <li>
-                <p>
-                    부모 / 자식 선택자 :  &gt; 를 구분자로 하여 앞에는 부모 요소와 뒤에는 자식 요소를 나타내며, 특정 부모 요소에 속하는 자식 요소를 선택하여 스타일 적용
-                </p>
-                <p>
-                    우선순위
-                    <br>
-                    # : 금메달 &nbsp;
-                    . : 은메달 &nbsp;
-                    태그 : 동메달
-                    <br>
-                    .arc > .menu > li 은2 동1<br>
-                    div.arc > ul.meun > li 은2 동3<br>
-                    div > ul > li 동3
-                    <br>
-                    아래처럼 큰 요소에서 작은 요소로 차례대로 스타일 지정하여 부여
-                    <br>
-                    div<br>
-                    div > ul<br>
-                    div > ul > li
-                </p>
-            </li>
-            <li>
-                <p>
-                    조상 / 후손 선택자 : 조상 요소와 후손 요소 사이에 한 칸의 공백으로 구분하여 특정 요소 안에 있는 후손 요소를 선택하여 스타일 적용할 때 
-                </p>
-                <p>
-                    .menu li <br>
-                    .arc li <br>
-                    위와 같이 띄워쓰기로 조상과 후손을 구분하여, 특정 조상의 후손을 선택
-                </p>
-            </li>
-            <li>
-                <p>
-                    복수 선택자 : 여러 요소를 선택할 때 콤마(,)를 이용하여 동시에 같은 스타일을 부여할 때, 한꺼번에 여러 요소를 선택함
-                </p>
-                <p>
-                    p, li, div<br>
-                    .menu, li, a<br>
-                    #menu, li.first<br>
-                    위와 같은 한 번에 여러 요소를 선택 => 복수 선택자
-                </p>
-            </li>
-            <li>
-                <p>
-                    순서 / 위치 선택자
-                </p>
-                <p>
-                    .menu li:first-child   : 첫 번째 자식<br>
-                    .menu li:nth-child(2)  : 두 번째 자식<br>
-                    .menu li:nth-child(2n) : 짝수 번째 자식<br>
-                    .menu li:nth-child(2n+1): 홀수 번째 자식<br>
-                    .menu li:nth-child(3)<br>
-                    .menu li:last-child    : 마지막 자식<br>
-
-                    child 개념은 현재 그룹내의 순서/위치로 구분하여 선택<br>
-                    :(콜른) 앞의 요소 중에 해당 순서에 맞는 요소를 선택
-                </p>
-                <p>
-                    .menu a:first-of-type: 첫 번째 요소<br>
-                    .menu a:nth-of-type(2): 두 번째 요소<br>
-                    .menu a:nth-of-type(2n): 짝수 번째 요소<br>
-                    .menu a:nth-of-type(2n+1): 홀수 번째 요소<br>
-                    .menu a:last-of-type: 막내 요소<br>
-                    .menu a:only-of-type: 단독 요소<br>
-
-                    of-type 개념은 현재 그룹 내의 요소와 순서가 모두 일치하면 선택<br>
-                    순서를 먼저 판단하고, :(콜른) 앞의 해당 요소를 선택
-                </p>
-            </li>
-            <li>
-                <p>내용</p>
-                
-            </li>
-            <li>
-                <p>내용</p>
-            </li>
-            <li>
-                <p>내용</p>
-            </li>
+        .arc li { }
+        .menu > li { }
+        </style>
+    </head>
+    <body>
+        <div>
+            <!-- 인라인 스타일 방식 -->
+            <h2 class="title" style="color: deeppink">김기태의 홈페이지</h2>
+            <h3 class="title">메인 페이지</h3>
+        </div>
+        <h3>스타일 지정 방식</h3>
+        <ul>
+            <li>인라인 스타일 지정 방식: 해당 요소에 style 속성으로 직접 스타일을 지정</li>
+            <li>내부 스타일 지정 방식: 현재 문서의 style 태그 내에 선택자를 이용하여 스타일을 부여하는 방식</li>
+            <li>외부 스타일 지정 방식: 별도의 외부 스타일 문서(CSS 파일)를 link로 연결하여 스타일을 지정하는 방식</li>
         </ul>
-    </div>
-</body>
+        <hr>
+        <h3>선택자(Selector)</h3>
+        <p>스타일을 부여할 대상을 의미하며, 아이디, 클래스, 태그, 계층 등의 정보를 활용해 선택하여 스타일을 부여할 수 있게 합니다.</p>
+        <hr>
+        <h4 id="item_tit" class="tit">기본 선택자</h4>
+        <ul>
+            <li>* : 전체 선택자로 스타일 부여할 요소가 모든 태그</li>
+            <li>태그 : 해당 태그를 선택하여 스타일을 부여</li>
+            <li>클래스 : .(점)을 구분자로 하는 선택자로 같은 스타일을 적용</li>
+            <li>아이디 : #(샵)을 구분자로 하는 선택자로 해당 문서에 유일하게 있는 요소에 스타일 적용</li>
+        </ul>
+        <p>아이디 > 클래스 > 태그 순으로 우선 순위가 있으며, 선택자 같고, 속성이 같은 경우에는
+            마지막에 설정한 속성이 적용됨.
+        </p>
+        <hr>
+        <h4>계층 선택자</h4>
+        <div class="arc">
+            <p>
+            #: 금메달<br>
+            .: 은메달<br>
+            태그: 동메달<br>  
+            .arc > .menu > li 은2 동1<br>
+            div.arc > ul.menu > li 은2 동3<br>
+            div > ul > li 동3<br>
+            <br>
+            아래 처럼 큰 요소에서 작은 요소로 차례대로 스타일 지정하여 부여<br>
+            div <br>
+            div > ul <br>
+            div > ul > li <br>
+            </p>
+            <p>
+            .menu li <br>
+            .arc li <br>
+            위와 같이 띄워쓰기로 조상과 후손을 구분하여 특정 조상의 후손을 선택
+            </p>
+            <p>
+            p, li, div <br>
+            .menu, li, a <br>
+            #menu, li.first <br>
+            위와 같이 한 번에 여러 요소를 선택 => 복수 선택자
+            </p>
+            <p>
+            span:empty: 내용이 비어 있는 요소만 선택<br>
+
+            <br>
+            .menu a:first-child: 첫 번째 자식<br>
+            .menu a:nth-child(2): 두 번째 자식<br>
+            .menu a:nth-child(2n): 짝수 번째 자식<br>
+            .menu a:nth-child(2n+1): 홀수 번째 자식<br>
+            .menu a:last-child: 막내 자식<br>
+            .menu a:only-child: menu 클래스 안에 a요소가 하나인 경우 선택<br>
+
+            child 개념은 현재 그룹내의 순서/위치로 구분하여 선택<br>
+            :(콜른) 앞의 요소 중에 해당 순서에 맞는 요소를 선택
+            </p>
+            <p>
+            .menu a:first-of-type: 첫 번째 요소<br>
+            .menu a:nth-of-type(2): 두 번째 요소<br>
+            .menu a:nth-of-type(2n): 짝수 번째 요소<br>
+            .menu a:nth-of-type(2n+1): 홀수 번째 요소<br>
+            .menu a:last-of-type: 막내 요소<br>
+            .menu a:only-of-type: 단독 요소<br>
+
+            of-type 개념은 현재 그룹 내의 요소와 순서가 모두 일치하면 선택<br>
+            순서를 먼저 판단하고, :(콜른) 앞의 해당 요소를 선택
+            </p>
+            <ul class="menu">
+                <li>
+                    <p>부모/자식 선택자: &gt; 를 구분자로 하여 앞에는 부모 요소와 뒤에는 
+                        자식 요소를 나타내며, 특정 부모 요소 속하는 자식 요소를 선택하여 스타일 적용</p>
+                </li>
+                <li>
+                    <p>조상/후손 선택자: 조상 요소와 후손 요소 사이에 한 칸의 공백으로 구분하여
+                        특정 요소 안에 있는 후손 요소를 선택하여 스타일 적용할 때 선택하는 선택자
+                    </p>
+                </li>
+                <li>
+                    <p>복수 선택자: 여러 요소를 선택할 때 콤마(,)를 이용하여 동시에 같은 스타일을 부여하기
+                        한꺼번에 여러 요소를 선택함
+                    </p>
+                </li>
+                <li>
+                    <p>순서/위치 선택자: 순서 또는 위치로 나타내는 선택자<br>
+                        -of-type(순서), -child(태그)<br>
+                        a:first-of-type => 첫 번째 요소이면서 a요소인 것을 선택<br>
+                        a:first-child => a태그 중에 첫 번째 요소 선택<br>
+                    </p>
+                </li>
+                <li>
+                    <p>형제 선택자: +(prev/next) 또는 ~(prevAll/nextAll)로 표기하여 선택
+                        #sp1 + a: 아이디가 sp1인 요소의 바로 다음 a 요소를 선택 (인접 선택자)<br>
+                        span + span: span 요소의 바로 다음 있는 span 요소를 선택<br>
+                        #sp1 ~ a: 아이디가 sp1인 요소의 아래(부모가 같은 동생들)에 있는 a 요소를 선택<br>
+                        #a2 ~ span: 아이디가 a2인 요소의 아래에 있는 span 요소들을 선택
+                    </p>  
+                </li>
+            </ul>
+            <nav class="menu"> 
+                <span id="sp1"></span>
+                <a href="" id="a1">메뉴1</a>
+                <a href="" id="a2">메뉴2</a>
+                <span>----</span>
+                <a href="">메뉴3</a>
+                <a href="">메뉴4</a>
+                <span></span>
+                <a href="">메뉴5</a>
+                <a href="">메뉴6</a>
+                <a href="">메뉴7</a>
+                <span>----</span>
+            </nav>
+        </div>
+    </body>
 </html>

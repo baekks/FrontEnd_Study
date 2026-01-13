@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 속성 단위</title>
+    <style>
+        body, html { width: 100vw; min-height: 100vh;}
+        .wrap { background-color: #ffe2e4;}
+        .c1 { background-color: #ffd2d6;}
+        .c2 { background-color: #ff9aa2;}
+        .box { display: inline-block; width: 165px; height: 165px;}
+        .b1 { border: 1px solid #333;}
+        .d45:hover { transform: rotate(45deg); transition: 3s;}
+        .d45 { transform: rotate(-45deg);}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>CSS 속성 단위</h1>
+        <p>
+            CSS의 속성을 지정할 때 속성의 값 뒤에 붙는 단위를 말함.<br>
+            ex) 20px, 10mm, 100% ... 에서 px, m, % 등
+        </p>
+        <hr>
+
+        <h2>길이/위치 단위</h2>
+        <p>
+            크기나 위치의 값을 숫자 뒤에 붙이는 단위로 절대 단위와 상대 단위가 있다.
+        </p>
+        <ul>
+            <li>
+                절대 단위 : px, pt, cm, mm, in, inch, ..
+            </li>
+            <li>
+                상대 단위 : %, em(비율=배율), rem(반응형), vw, vh, ch(폭),
+            </li>
+        </ul>
+        <div style="width: 1000px; font-size: 20pt; height: 100vh;">
+            글자 1
+            <p style="width: 50%; font-size: 2em;">글자 2</p>
+            <p style="width: 50%; font-size: 2ch;">글자 3</p>
+        </div>
+        <hr>
+
+        <h2>색상 단위</h2>
+        <p>
+            색상 단위는 색량(채도)이나 명도, 책의 크기를 지정하는 방식
+        </p>
+        <ul>
+            <li>
+                컬러명 - color : black
+            </li>
+            <li>
+                HEX(16진수) 6자리 - color : #2c82c8
+            </li>
+            <li>
+                HEX(16진수) 3자리 - color : #f00
+            </li>
+            <li>
+                RGB - rgb(0~255, 0~255, 0~255) - color : rgb(255,0,0)
+            </li>
+            <li>
+                RGBA - rgba(0~255, 0~255, 0~255, 0~1(실수가 들어가고 투명도 조절)) - color : rgba(255,0,0,0.5)
+            </li>
+            <li>
+                HSL - hsl(hue,saturate,lightness) - color : hsl(0,50%, 100%)
+            </li>
+            <li>
+                HSLA - hsla(hue,saturate,lightness) - color : hsl(0,50%, 100%,0.5)
+            </li>
+        </ul>
+        <p>
+            색상(Color) : 색(Hue) + 채도(Saturation) + 명도(Lightness/Brightness)<br>
+            alpha(=opacity) : 불투명도 0~1
+        </p>
+        <div class="wrap2">
+            <div class="box c1"></div>
+            <div class="box c2"></div>
+            <div class="box c1"></div>
+            <div class="box c2"></div>
+            <div class="box c1"></div>
+            <div class="box c2"></div>
+            <div class="box c1"></div>
+            <div class="box c2"></div>
+            <div class="box c1"></div>
+            <div class="box c2"></div>
+            <div class="box c1"></div>
+            <div class="box c2"></div>
+        </div>
+        <hr>
+
+        <h2>시간 단위</h2>
+        <p>
+            시간 단위는 애니메이션이나 트랜지션 등에서 사용되는 단위로 s, ms 등을 활용<br>
+            ex) transition: 1s
+        </p>
+        <hr>
+
+        <h2>각도 단위</h2>
+        <p>
+            각도 단위는 변형에서 방향이나 회전시에 사용되는 단위로 deg 등을 활용<br>
+            ex) transform: 45deg
+        </p>
+        <div class="shape">
+            <div class="box b1 d45">글자</div>
+        </div>
+        <hr>
+
+
+    </div>
+</body>
+</html>

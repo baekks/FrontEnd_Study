@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>가상 선택자</title>
+        <style>
+            /* 속성 선택자 */
+            img[src] { display: block; height: 160px;
+                        border: 1px solid #333;}
+            img[src^=mb] { width: 600px; }
+            img[src$=png] { border: 3px solid gold; }
+            img[src*=03] { height: 240px; }
+
+            /* src에 기입된 확장자가 jpg이면, 테두리 색 deeppink, 두께 5px, 선모양 실선 */
+            img[src*=jpg] { border: 5px solid deeppink; }
+
+            /* src에 기입된 확장자가 gif이면, 테두리 색 deepskyblue, 두께 5px, 선모양 실선 */
+            img[src*=gif] { border: 5px solid deepskyblue; }
+
+            /* src에 기입된 확장자가 png이면, 테두리 색 purple, 두께 5px, 선모양 실선 */
+            img[src$=png] { border: 5px solid purple; }
+            
+
+            /* 링크/반응 선택자*/
+            a { display: inline-block; padding: 10px; background-color: #e2e2e2; cursor: pointer; }
+            a:link { text-decoration: none; color: pink; }
+            a:visited { color: deeppink; }
+            a:hover { background-color: #232323; }
+            a:active { background-color: gold; }
+
+            /* 상태 선택자 */
+            .check label { display: block; height: 100px; overflow: hidden; transition: 1s; background-color: lightpink; }
+            .check input:checked + label { height: 0; }
+            input:enabled { background-color: hotpink; }
+            input:disabled { background-color: skyblue; }
+            input[type=text] { border: 5px solid gold; }
+
+            /* 이중 반응/전-후 선택자 */
+            .sel::first-letter { font-size: 52px; }
+            .sel::first-line { color: deeppink }
+            .sel::selection { background-color: skyblue; }
+            .sel::after { content: ". 끝." }
+            .sel::before { content: "애국가: " }
+        </style>
+    </head>
+    <body>
+        <h2>속성 선택자</h2>
+        <ul>
+            <li>
+                [attr] : 해당 속성이 있으면 선택, ex) a[href]
+            </li>
+            <li>
+                [attr^=문자열] : 해당 속성이 문자열로 시작하면 선택, ex) img[src^=mb]
+            </li>
+            <li>
+                [attr$=문자열] : 해당 속성이 문자열로 끝나면 선택, ex) img[src$=mb]
+            </li>
+            <li>
+                [attr*=문자열] : 해당 속성에 문자열이 포함되면 선택, ex) img[src*=mb]
+            </li>
+        </ul>
+        <p>
+            예를 들어, img[src], img[src^="mb"], img[src$="png"], img[src*="03"] 등이 있음.
+        </p>
+        <div>
+            <img alt="No Image">
+            <img src="mbc01.jpg" alt="JPG">
+            <img src="kbs02.png" alt="PNG">
+            <img src="itv03.gif" alt="GIF">
+        </div>
+        <hr>
+
+        <h2>링크/반응 선택자</h2>
+        <ul>
+            <li>:link - a 요소에 href(링크)가 있는 요소</li>
+            <li>:visited - a 요소에 있는 href 속성 값을 방문한 적이 있는 요소</li>
+            <li>:hover - 해당 요소에 마우스 포인터를 올렸을 때 선택</li>
+            <li>:active - 해당 요소에 마우스를 클릭했을 때  선택</li>
+        </ul>
+        <p>
+            링크/반응 선택자는 a 요소에 적용하는 선택자이지만, :hover 와 :active는 다른 태그에도 사용이 가능합니다.
+        </p>
+        <div>
+            <a>링크 없는 a</a><br>
+            <a href="https://www.naver.com/">네이버</a><br>
+            <a href="https://github.com/baekks/">셔니의 깃 허브</a><br>
+        </div>
+        <hr>
+
+        <h2>상태 선택자</h2>
+        <ul>
+            <li>
+                :checked - 현재 상태가 check 된 상태이면, 선택되는 것으로 체크박스(checkbox)나 라디오(Radio) 버튼에 사용할 수 있음
+            </li>
+            <li>
+                :enabled - 현재 요소가 사용이 가능한 상태이면, 선택하는 것으로 타입(input)에 관계없이 input 요소에서 사용이 가능한 요소를 선택할 때 사용
+            </li>
+            <li>
+                :disabled - 현재 요소가 사용이 불가능한 상태이면, 선택하는 것으로 타입(input)에 관계없이 input 요소에서 사용이 불가능한 요소를 선택할 때 사용 (전송 안됨)
+            </li>
+        </ul>
+        <p>
+            상태 선택자는 주로 폼 요소가 어떠한 상태인지에 따라 선택하여 스타일 적용
+        </p>
+        <div class="status">
+            <div class="check">
+                <input type="checkbox" id="ck1">
+                <label for="ck1">항목1</label>
+                <input type="checkbox" id="ck2">
+                <label for="ck2">항목2</label>
+                <input type="checkbox" id="ck3">
+                <label for="ck3">항목3</label>
+            </div>
+            <div class="posible">
+                <input type="text" id="id" name="id" placeholder="아이디 입력"><br>
+                <input type="text" id="name" name="name" value="백경서" disabled><br>
+                <input type="text" id="addr" name="addr" value="부평동" readonly><br>
+                <input type="hidden" id="confirm" name="confirm" value="ok">
+            </div>
+        </div>
+        <hr>
+
+        <h2>이중 반응 선택자</h2>        
+        <ul>
+            <li>
+                ::first-letter - 해당 요소의 첫 글자만 선택
+            </li>
+            <li>
+                ::first=line - 해당 요소의 첫 줄만 선택
+            </li>
+            <li>
+                ::selection - 마우스로 text의 범위를 선택
+            </li>
+            <li>
+                ::before - 특정 요소의 앞을 선택
+            </li>
+            <li>
+                ::after - 특정 요소의 뒤를 선택
+            </li>
+        </ul>
+        <p>
+            위 다섯 가지는 가상 선택자로 실제 선택이나 탐색이 불가능합니다.
+        </p>
+        <div class="double">
+            <p class="sel">
+                동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 본전하세
+                동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 본전하세
+                동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 본전하세
+                동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 본전하세
+                동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 본전하세
+                동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 본전하세
+                동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 본전하세
+                동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 본전하세
+                동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 본전하세
+            </p>
+        </div>
+    </body>
+</html>

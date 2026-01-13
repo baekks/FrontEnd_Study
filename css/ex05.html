@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS 기본 속성</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+
+            .color span{ display: inline-block; padding: 10px;}
+            .c1 { color: #ffe2e4; }
+            .c2 { color: #fcd;}
+            .c3 { color: rgb(255,183,188);}
+            .c4 { color: rgba(255,161,168,1);}
+            .c5 { color: hsl(356, 100%, 77%);}
+            .c6 { color: hsla(356, 100%, 73%, 1);}
+            
+            .font-size span { display: inline-block; padding: 10px;}
+            .fs1 { font-size: 20px;}
+            .fs2 { font-size: 20pt;}
+            .fs3 { font-size: 2em;}
+            .fs4 { font-size: 200%;}
+            .fs5 { font-size: 2rem;}
+            .fs6 { font-size: 2ch;}
+
+            @import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+            .font-family span { display: inline-block; padding: 10px; font-size: 20pt;}
+            .ff1 { font-family: sans-serif, cursive;}
+            .ff2 { font-family: "Noto Sans", sans-serif;}
+            .ff3 { font-family: "Nanum Brush Script", cursive;}
+            .ff4 { font-family: "Nunu",serif;}
+            .ff5 { font-family: "siyeon",sans-serif;}
+            .ff6 { font-family: "돋움체", "Dotum", monospace;}
+            /*
+                serif(명조), sans-serif(고딕), cursive(궁서), monospace(장평 1:1)
+            */
+        </style>
+    </head>
+    <body>
+        <h1>CSS 기본 속성</h1>
+        <hr>
+
+        <h2>CSS 글자/문단 관련 속성</h2>
+        <ul>
+            <li>
+                color: 글자색으로 컬러명, HEX, RGB(RGBA), HSL(HSLA) 단위로 지정 가능
+            </li>
+            <li>
+                font-size: 글자 크기로 px, pt, em, % 등의 단위로 지정 가능
+            </li>
+            <li>
+                font-family: 글꼴로 해당 글꼴이 서버 또는 컴퓨터에 설치가 되어 있거나 또는 웹 폰트를 지정하여 사용할 수 있음
+            </li>
+            <li>
+                font-weight: 글자 두께로 nomal(기본값), light, bold, 100~900 100 단위씩 글꼴에 따라 지정이 가능
+            </li>
+            <li>
+                line-height: 줄 간격으로 px, pt, em 단위 등을 사용할 수 있지만, 보통 생략하여 em 단위로 지정
+            </li>
+            <li>
+                text-align: 글자 정렬 방식으로 left(기본값), center, right 등을 지정
+            </li>
+            <li>
+                text-decoration: 글자 장식으로 underline(밑줄), overline(윗줄), through(취소선) 등을 지정
+            </li>
+            <li>
+                text-shadow: 글자에 그림자를 넣는 것으로 (x량 y량 blur량 그림자색) 등을 지정
+            </li>
+        </ul>
+        <div class="color">
+            <span class="c1">글자1</span>
+            <span class="c2">글자2</span>
+            <span class="c3">글자3</span>
+            <span class="c4">글자4</span>
+            <span class="c5">글자5</span>
+            <span class="c6">글자6</span>
+        </div>
+        <hr>
+
+        <div class="font-size">
+            <span class="fs1">글자크기1</span>
+            <span class="fs2">글자크기2</span>
+            <span class="fs3">글자크기3</span>
+            <span class="fs4">글자크기4</span>
+            <span class="fs5">글자크기5</span>
+            <span class="fs6">글자크기6</span>
+        </div>
+        <hr>
+
+        <div class="font-family">
+            <span class="ff1">FONT - 글꼴1</span>
+            <span class="ff2">FONT - 글꼴2</span>
+            <span class="ff3">FONT - 글꼴3</span>
+            <span class="ff4">FONT - 글꼴4</span>
+            <span class="ff5">FONT - 글꼴5</span>
+            <span class="ff6">FONT - 글꼴6</span>
+        </div>
+        <hr>
+
+        
+    </body>
+</html>

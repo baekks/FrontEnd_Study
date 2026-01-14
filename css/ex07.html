@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS 박스 관련 속성</title>
+        <style>
+            .box { width: 200px; height: 200px; border: 3px solid #333; border-radius: 40px 80px;}
+        </style>
+    </head>
+    <body>
+        <h1>박스 관련 속성</h1>
+        <p>
+            inline(인라인 방식 태그): a, span, strong, em, ins, input, button => 크기 지정이 불가능하고, 글자 정렬X, 상/하 margin X, 줄 간격 지정 X -> 기본적으로 한 줄로 배치
+        </p>
+        <p>
+            inline-block(인라인 블록 태그): img, video, audio, => 크기 지정이 가능하지만, 한 줄로 배치됨
+        </p>
+        <p>
+            block(블록 방식 태그): div, header, footer, main, nav, aside, figure, section, article, h1~h6, .... => 크기 지정이 가능하고, 한 줄에 하나만 배치
+        </p>
+        <hr>
+
+        <h2>크기</h2>
+        <a href="">링크</a>
+        <ul>
+            <li>
+                width: 폭. auto, px, %, vw 단위
+            </li>
+            <li>
+                height: 높이. auto, px, %, vh 단위
+            </li>
+        </ul>
+        <hr>
+
+        <h2>바깥여백</h2>
+        <ul>
+            <li>
+                margin: 바깥여백을 한 번에 지정. 10px, 10px 20px, 10px 20px 30px 40px
+            </li>
+            <li>
+                margin-top: 바깥 위 여백. px, % 단위
+            </li>
+            <li>
+                margin-right: 바깥 오른쪽 여백. px, % 단위
+            </li>
+            <li>
+                margin-bottom: 바깥 아래 여백. px, % 단위
+            </li>
+            <li>
+                margin-left: 바깥 왼쪽 여백. px, % 단위
+            </li>
+        </ul>
+        <hr>
+
+        <h2>안 여백</h2>
+        <ul>
+            <li>
+                padding: 안 여백을 한 번에 지정. 10px, 10px 20px, 10px 20px 30px 40px
+            </li>
+            <li>
+                padding-top: 안 위 여백. px, % 단위
+            </li>
+            <li>
+                padding-right: 안 오른쪽 여백. px, % 단위
+            </li>
+            <li>
+                padding-bottom: 안 아래 여백. px, % 단위
+            </li>
+            <li>
+                padding-left: 안 왼쪽 여백. px, % 단위
+            </li>
+        </ul>
+        <hr>
+        
+        <h2>테두리(border, outline)</h2>
+        <ul>
+            <li>
+                border: 테두리 통합 속성으로 상/우/하/좌의 선두께 선모양 선색
+            </li>
+            <li>
+                border-width: 선 두께를 지정하는 세부 속성. px 단위
+            </li>
+            <li>
+                border-style: 선 모양을 지정하는 세부 속성. solid(실선)|dashed|dotted|hidden|double
+            </li>
+            <li>
+                border-color: 선 색을 지정하는 세부 속성. 컬러명, HEX, rgb(rgba), hsl(hsla)
+            </li>
+            <li>
+                border-top: 상단 테두리의 선두께 서모양 선색을 지정하는 세부 속성
+            </li>
+            <li>
+                border-right: 우측 테두리의 선두께 서모양 선색을 지정하는 세부 속성
+            </li>
+            <li>
+                border-bottom: 하단 테두리의 선두께 서모양 선색을 지정하는 세부 속성
+            </li>
+            <li>
+                border-left: 좌측 테두리의 선두께 서모양 선색을 지정하는 세부 속성
+            </li>
+            <li>
+                border-[방향]-width: 특정 방향(상우하좌)의 선 두께를 지정하는 세세 속성
+            </li>
+            <li>
+                border-[방향]-style: 특정 방향(상우하좌)의 선 모양을 지정하는 세세 속성
+            </li>
+            <li>
+                border-[방향]-color: 특정 방향(상우하좌)의 선 색을 지정하는 세세 속성
+            </li>
+            <li>
+                스타일을 지정할 때 통합속성 -> 세부속성 -> 세세속성 순으로 지정해야함
+            </li>
+        </ul>
+        <hr>
+
+        <h2>모서리 둥글기</h2>
+        <ul>
+            <li>
+                border-radius: 모서리의 둥글기를 지정하는 세부속성. px,% 단위 10px, 10px 20px, 10px 20px 30px, 10px 20px 30px 40px. lt/rb rt/lb lt rt rb lb 
+            </li>
+            <li>
+                border-top-left-radius ~~
+            </li>
+        </ul>
+        <div class="box"></div>
+    </body>
+</html>

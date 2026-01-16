@@ -5,7 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CSS 박스 관련 속성</title>
         <style>
-            .box { width: 200px; height: 200px; border: 3px solid #333; border-radius: 40px 80px;}
+            .box_wrap::after { clear: both; content: ""; display: block;}
+            .box_wrap { width: 640px; border: 1px solid #369;}
+            .box { width: 200px; height: 200px; border: 5px solid #333; border-radius: 40px 80px; margin: 10px; padding: 20px;  float: left; box-sizing: border-box; overflow: hidden;  }    /* 실제 폭 : 왼쪽마진(20px)+왼쪽보더(5px)+왼쪽패딩(30)+폭(200)+오른쪽패딩(30)+오른쪽보더(5)+오른쪽마진(20) = 310 */
+            .box:nth-child(2) { display: inline;}
+            strong.box { display: block;}
+            .box:last-child { display: none;}
+            .box:nth-child(8) { opacity: 0;}
+            .box:nth-child(9) { background-color: rgba(255, 255, 0, 0.1);}
+            .box:nth-child(10) { visibility: hidden;}
         </style>
     </head>
     <body>
@@ -21,6 +29,24 @@
         </p>
         <hr>
 
+        <h2>출력 속성</h2>
+        <p>
+            display: block|inline|inline-block|none
+        </p>
+        <hr>
+
+        <h2>불투명도</h2>
+        <p>
+            opacity: 불투명도. 0~1
+        </p>
+        <hr>
+
+        <h2>가시 속성</h2>
+        <p>
+            visibility: 보이거나 숨기는 속성. visible|hidden
+        </p>
+        <hr>
+
         <h2>크기</h2>
         <a href="">링크</a>
         <ul>
@@ -32,6 +58,19 @@
             </li>
         </ul>
         <hr>
+        <h2>크기 지정 기준</h2>
+         <p>
+            box-sizing: content-box(지정한 width, height을 콘텐츠 크기로 지정), padding-box(지정한 width, height에 패딩까지의 크기로 지정), border-box(지정한 width, height에 패딩과 보더의 크기를 포함하여 지정)
+         </p>
+         <hr>
+
+         <h2>흘러 넘침</h2>
+         <p>
+            overflow: visible|hidden|scroll|auto<br>
+            overflow-x: 가로 방향 흘러 넘침 속성
+            overflow-y: 세로 방향 흘러 넘침 속성
+         </p>
+         <hr>
 
         <h2>바깥여백</h2>
         <ul>
@@ -123,6 +162,26 @@
                 border-top-left-radius ~~
             </li>
         </ul>
-        <div class="box"></div>
+        <div class="box_wrap">
+            <div class="box"><img src="moco.png"></div>
+            <div class="box"><img src="mococo.png"></div>
+            <div class="box"><img src="mochoho.png">박스3</div>
+            <span class="box"><img src="mocho.png">박스31</span>
+            <div class="box"><img src="mokoko.jpg">박스4</div>
+            <div class="box"><img src="moko.jpg">박스5</div>
+            <span class="box"><img src="bbajig.jpg">박스51</span>
+            <div class="box">박스6</div>
+            <div class="box">박스7</div>
+            <div class="box">박스8</div>
+            <strong class="box">박스81</strong>
+            <div class="box">박스9</div>
+            <em class="box">박스91</em>
+            <div class="box">박스10</div>
+        </div>
+         <hr>
+
+        
+
+
     </body>
 </html>

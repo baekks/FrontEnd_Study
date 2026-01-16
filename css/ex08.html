@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 배치 관련 속성</title>
+    <style>
+    ul { list-style: none; }
+    .box_wrap { width:1000px; border:1px solid #333; clear:both; 
+    min-height:500px;  margin: 0px auto; }   
+    .box { width:150px; height: 150px; margin: 5px; padding: 10px; 
+    text-align: center; line-height: 150px; } 
+    .box:first-child { background-color: deeppink; }
+    .box:nth-child(2n) { background-color: brown; }
+    .box:nth-child(2n+1) { background-color: green; }
+    .box:nth-child(2) { background-color: red; }
+    .box:nth-child(3) { background-color: deepskyblue; }
+    .box:nth-child(4) { background-color:gold; }
+
+    #static .box { float: left; }
+    /* clear fix 처리 */
+    #static .box_wrap::after { content:""; display:block; clear:both; } 
+
+    #absolute .box_wrap { position:relative; }
+    #absolute .box { position: absolute; }
+    #absolute .box:first-child { left:50px; top:60px; z-index:90; }
+    #absolute .box:nth-child(2) { left:90px; top:100px; z-index:80; }
+    #absolute .box:nth-child(3) { right: 50px; top: 60px; }
+    #absolute .box:nth-child(4) { right: 60px; bottom: 50px; }
+    #absolute .box:nth-child(5) { left: 60px; bottom: 50px; z-index:999; left: auto; right: 60px; }
+    #absolute .box:nth-child(6) { right:80px; top:80px; }
+    #absolute .box:nth-child(7) { right:90px; bottom:90px; }
+    #absolute .box:nth-child(8) { left:90px; bottom:90px; }
+
+    #absolute .box_wrap::after { content:""; display:block; clear:both; } 
+
+    #fixed .quick_top { width:240px; height:300px; background-color:gold; 
+    position:fixed; right:30px; top:100px; z-index:9999; }
+    #fixed .quick_top a { color:#333; display: block;
+        text-align: center; text-decoration: none; line-height: 40px;
+    height: 40px;    }
+    #fixed .quick_bottom { width: 36px; height: 36px; line-height: 36px; 
+    border-radius:30px; overflow:hidden; position: fixed; right:80px; 
+    bottom: 100px; z-index:9999; }
+    #fixed .quick_bottom a { display:block; text-align: center; line-height: 36px; 
+     text-decoration: none; color:#fff;  }
+
+     #relative .box { position: relative; float:left; margin-right: 30px; margin-top: 30px; }
+     #relative .box:nth-child(2n+1) { clear:both; }
+
+     #relative .box_wrap::after { content:""; display:block; clear:both; } 
+</style>
+</head>
+<body>
+<h1>배치 관련 속성</h1>
+<hr>
+<h2>위치(position)</h2>
+<p>position: 위치 기준을 지정하는 속성. static|relative|absolute|fixed|sticky</p>
+<ul>
+    <li>static: 정적. width, height, margin, float, clear 속성을 활용하여 배치</li>
+    <li>absolute: 절대. left/right, top/bottom, z-index 속성을 활용하여 배치</li>
+    <li>relative: 상대. width, height, margin, float, clear 속성을 활용하여 배치</li>
+    <li>fixed: 화면고정 위치. left/right, top/bottom, z-index 속성을 활용하여 배치</li>
+</ul>
+<hr>
+<h2>흐름 속성</h2>
+<p>float: 흐름(부유) 속성. left|right</p>
+<hr>
+<h2>흐름 해제 속성</h2>
+<p>clear: 흐름(float) 속성 해제. left|right|both</p>
+<hr>
+<h2>좌표 속성</h2>
+<ul>
+    <li>left: 왼쪽으로 부터 기준으로 위치 설정. px, % 등 단위와 auto</li>
+    <li>right: 오른쪽으로 부터 기준으로 위치 설정. px, % 등 단위와 auto</li>
+    <li>top: 꼭대기로 부터 기준으로 위치 설정. px, % 등 단위와 auto</li>
+    <li>bottom: 바닥으로 부터 기준으로 위치 설정. px, % 등 단위와 auto</li>
+    <li>left/right 중에서 하나만 사용해야 되지만, 가끔 left가 설정되어 
+        있는 상태에서 right를 설정하면, left를 auto로 설정하면, right 적용됨 </li>
+</ul>
+<div class="wrap" id="static">
+    <ul class="box_wrap">
+        <li class="box">static박스1</li>
+        <li class="box">박스2</li>
+        <li class="box">박스3</li>
+        <li class="box">박스4</li>
+        <li class="box">박스5</li>
+        <li class="box">박스6</li>
+        <li class="box">박스7</li>
+        <li class="box">박스8</li>
+    </ul>
+</div>
+<div class="wrap" id="absolute">
+    <ul class="box_wrap">
+        <li class="box">absolute박스1</li>
+        <li class="box">박스2</li>
+        <li class="box">박스3</li>
+        <li class="box">박스4</li>
+        <li class="box">박스5</li>
+        <li class="box">박스6</li>
+        <li class="box">박스7</li>
+        <li class="box">박스8</li>
+    </ul>
+</div>
+<div class="wrap" id="fixed">
+    <ul class="box_wrap">
+        <li class="box quick_top">
+            <nav>
+                <a href="">fixed메뉴1</a>
+                <a href="">메뉴2</a>
+                <a href="">메뉴3</a>
+                <a href="">메뉴4</a>
+            </nav>
+        </li>
+        <li class="box quick_bottom">
+            <a href="#">위로</a>
+        </li>
+    </ul>
+</div>
+<div class="wrap" id="relative">
+    <ul class="box_wrap">
+        <li class="box">relative박스1</li>
+        <li class="box">박스2</li>
+        <li class="box">박스3</li>
+        <li class="box">박스4</li>
+        <li class="box">박스5</li>
+        <li class="box">박스6</li>
+        <li class="box">박스7</li>
+        <li class="box">박스8</li>
+    </ul>
+</div>    
+</body>

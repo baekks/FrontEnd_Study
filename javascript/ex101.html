@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트01</title>
+</head>
+<body>
+    <h2>자바스크립트 01</h2>
+    <hr>
+    <p>
+        정식 명칭은 ECMA Script입니다. 원래 기반은 클라이언트 기반으로 웹 브라우저에서 동작하도록 만든 언어<br>
+        ES2014 (ES5) => ES2015(ES6)<br>
+        줄여서 ES로 부르며, 현재 수준(버전)은 ES6+를 기준으로 합니다.<br>
+        아래와 같이 사용자의 행위에 따라서 반응을 주는 것을 이벤트 처리라고 합니다.<br>
+        아래에서 onclick은 button 태그의 속성으로 이벤트를 간단히 적용하는 것을 인라인 이벤트라고 함.<br>
+        즉, 해당하는 태그에 직접 자바스크립트의 이벤트를 적용하는 것을 의미
+    </p>
+    <h3>인라인 이벤트</h3>
+    <button onclick="alert('부르셨습니까?')">버튼1</button>
+    <br>
+    <hr>
+    <!-- ES5에서 사용하는데 요즘엔 어쩌다 간혹가다 한번 사용...? -->
+    <button onclick="fnc1()">버튼2</button>
+    <br>
+    <div id="name"></div>
+    <script>
+        function fnc1() {
+            var name = prompt("당신의 이름은?");
+            document.getElementById("name").innerText = name;
+        }
+    </script>
+    <hr>
+    <button id="btn3">버튼3</button>
+    <br>
+    <div id="status"></div>
+    <script>
+        document.getElementById("btn3").addEventListener("click", function() {
+            let ps = confirm("당신이 맞습니까?");
+            if(ps) {
+                document.getElementById("status").innerHTML = "<strong>잘 하셨습니다.</strong>";
+            } else {
+                document.getElementById("status").innerHTML = "<i>잘못 하셨습니다.</i>";
+            }
+        });
+    </script>
+</body>
+</html>

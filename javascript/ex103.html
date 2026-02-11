@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트03</title>
+</head>
+<body>
+    <h2>연산자</h2>
+    <script>
+        let a = 10;
+        let b = 3;
+
+        // 산술 연산(+, -, *, /, %)
+        console.log("========== 산술연산 ==========")
+        console.log("a+b: "+ (a+b));
+        console.log("a-b: "+ (a-b));
+        console.log("a*b: "+ (a*b));
+        console.log("a/b: "+ (a/b));
+        console.log("a%b: "+ (a%b));
+
+        // 증감 연산(++, --, +=, -=, *=, /=, %=)
+        console.log("\n========== 증감연산 ==========")
+        console.log("++a: " + (++a));
+        console.log("--b: " + (--b));
+        console.log("a+=2: " + (a+=2));
+        console.log("b-=3: " + (b-=3));
+        console.log("b*=2: " + (b*=2));
+        console.log("a/=3: " + (a/=3));
+        a = 26;
+        console.log("a%=4: " + (a%=4));
+
+        a = 10;
+        b = 3;
+        // 비교 연산(==, ===, !=, !==, >, <, >=, <=)
+        console.log("\n========== 비교연산 ==========")
+        console.log("a=='10' => " + (a=="10"));     // 값만 비교
+        console.log("a==='10' => " + (a==="10"));   // 값과 타입이 모두 일치하는지 비교
+        console.log("a!='10' => " + (a!=10));
+        console.log("a!=='10' => " + (a!==10));
+        console.log("a>b => " + (a>b));
+        console.log("a>=b => " + (a>=b));
+        console.log("a<b => " + (a<b));
+        console.log("a<=b => " + (a<=b));
+
+        // 논리 연산(&&, ||, !)
+        console.log("\n========== 논리연산 ==========")
+        console.log("a>5 && b>5: " + (a>5 && b>5));
+        console.log("a>5 || b>5: " + (a>5 || b>5));
+        console.log("!(a>5): " + !(a>5));
+
+        // 삼항 연산(?:)
+        console.log("\n========== 삼항연산 ==========")
+        console.log("(a > b) ? '크다' : '작다': " + ((a > b) ? '크다' : '작다'));
+    </script>
+</body>
+</html>

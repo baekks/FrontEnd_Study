@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트09</title>
+</head>
+<body>
+    <h2>DOM 탐색</h2>
+    <hr>
+    <p>
+        DOM(Document Object Model) 탐색: 웹 문서(HTML로 만든 파일)에 있는 태그
+    </p>
+    <div id="name">김기태</div>
+    <div id="age">39</div>
+    <div id="face">잘? 생김 주의</div>
+    <div id="result" class="result"></div>
+    <script>
+        let name = document.getElementById("name").innerText;
+        let age = parseInt(document.getElementById("age").innerText);
+        let face = document.getElementById("face").innerText;
+
+        console.log("name: " + name);
+        console.log("age: " + age);
+        console.log("face: " + face);
+
+        let output = "<ul>";
+        output+="<li>name: "+name+"</li>";
+        output+="<li>age: "+age+"</li>";
+        output+="<li>face: "+face+"</li>";
+        output+="</ul>";
+
+        document.getElementById("result").innerHTML = output;
+    </script>
+</body>
+</html>

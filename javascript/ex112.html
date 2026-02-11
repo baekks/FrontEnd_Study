@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크립트12</title>
+    <style>
+        .active {
+            background-color: deeppink;
+        }
+        #lnb {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 999;
+            background-color: cornflowerblue;
+            transition: 0.6s;
+        }
+
+        #lnb.off {
+            right: -250px;
+        }
+    </style>
+</head>
+<body>
+    <h2>DOM 탐색 - 스타일 변경</h2>
+    <div class="content">
+        <h3 id="title">제목</h3>
+        <ul>
+            <li class="item">항목1</li>
+            <li class="item">항목2</li>
+            <li class="item">항목3</li>
+            <li class="item">항목4</li>
+        </ul>
+        <div class="para">
+            <p>내용1</p>
+            <p>내용2</p>
+            <p>내용3</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("title").style.color = "red";
+        // 항목1~5의 글자색을 파란색으로 변경
+        let items = document.getElementsByTagName("li");
+        Array.from(items).forEach(i => {
+            i.style.color = "blue";
+        });
+        // 내용1~3의 글자장식을 밑줄, 글자색을 초록(green)으로 변경
+        let ps = document.getElementsByTagName("p");
+        Array.from(ps).forEach(p => {
+            p.style.textDecoration = "underline";
+            p.style.color = "green";
+        });
+
+        // 클릭된 p요소에 .active 클래스를 추가
+        document.querySelectorAll("p").forEach(function(item) {
+
+            item.addEventListener("click", function() {
+
+                this.classList.add("active");
+            });
+        });
+    </script>
+    <button id="btn1">close</button>
+    <aside id="lnb">
+        <nav>
+            <a href="">menu1</a>
+            <a href="">menu2</a>
+            <a href="">menu3</a>
+            <a href="">menu4</a>
+        </nav>
+    </aside>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let lnb = document.getElementById("lnb");
+        let sw = 1;
+
+        btn1.addEventListener("click", function() {
+            
+            if(sw == 1) {
+                btn1.innerText = "open";
+                lnb.classList.add("off");
+            } else {
+                btn1.innerText = "close";
+                lnb.classList.remove("off");
+            }
+            sw *= -1;
+        });
+
+        // 토글 방식 lnb.classList.toggle("off");
+    </script>
+</body>
+</html>

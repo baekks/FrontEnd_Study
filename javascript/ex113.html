@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연습13</title>
+</head>
+<body>
+    <h2>폼 입력 제어</h2>
+    <form onsubmit="fnc1()">
+        <input type="text" name="username" id="username" placeholder="name input"><br><br>
+        <input type="hidden" name="ck", id="ck" value="no">
+        <input type="checkbox" id="ck_main">
+        <label for="ck_main">전체 동의</label><br>
+        <input type="checkbox" name="ck1" id="ck1">
+        <label for="ck1">약관동의(필수)</label><br>
+        <input type="checkbox" name="ck2" id="ck2">
+        <label for="ck2">개인정보처리 방침 동의(필수)</label><br>
+        <input type="checkbox" name="ck3" id="ck3">
+        <label for="ck3">개인정보 이용 동의(선택)</label><br>
+        <button type="submit">확인</button>
+    </form>
+    <script>
+        function fnc1() {
+            let username = document.getElementById("username");
+            let ck = document.getElementById("ck");
+            let ck1 = document.getElementById("ck1");
+            let ck2 = document.getElementById("ck2");
+
+            if(username.value !== "" && ck1.checked && ck2.checked) {
+                ck1.value = "yes";
+                alert("모든 데이터가 정상적으로 처리 되었습니다.");
+            } else {
+                alert("사용자 이름이 입력되지 않았거나 필수 사항이 선택되지 않았습니다.");
+                username.focus();
+            }
+        }
+
+        let ck_main = document.getElementById("ck_main");
+        let ck = document.getElementById("ck");
+        let ck1 = document.getElementById("ck1");
+        let ck2 = document.getElementById("ck2");
+        let ck3 = document.getElementById("ck3");
+        let checks = [ck1, ck2, ck3];
+
+        // 전체 동의를 체크하면, 약관동의(필수), 개인정보처리 방침 동의(필수), 개인정보 이용 동의(선택) 를 체크하게 변경
+        ck_main.addEventListener("change", function() {
+            ck1.checked = ck_main.checked;
+            ck2.checked = ck_main.checked;
+            ck3.checked = ck_main.checked;
+        })
+
+        // 약관동의(필수), 개인정보처리 방침 동의(필수), 개인정보 이용 동의(선택)를 하나라도 체크 해제하면, 전체 동의가 체크 해제 되게...
+        /*
+        ck1.addEventListener("change", function() {
+            ck_main.checked = ck1.checked;
+        })
+        ck2.addEventListener("change", function() {
+            ck_main.checked = ck2.checked;
+        })
+        ck3.addEventListener("change", function() {
+            ck_main.checked = ck3.checked;
+        })
+        */
+        // ck1 ~ ck3까지 모두 선택되어야지 true를 반환
+        checks.forEach(function(item) {
+            item.addEventListener("change", function() {
+                let allChecked = checks.every(function(cb) {
+                    return cb.checked;
+                });
+                ck_main.checked = allChecked;
+            });
+        })
+
+        // 버튼을 눌렀을 때, 이름을 입력하고, 약관동의(필수), 개인정보처리 방침 동의(필수)등이 체크되어 있으면, ck의 값을 yes로 변경
+        // 그렇지 않으면, "이름 또는 필수 선택 사항이 선택되어 있지 않습니다."라는 메세지를 띄우고 이름 입력란으로 이동
+    </script>
+</body>
+</html>

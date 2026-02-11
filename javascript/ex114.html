@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트14</title>
+</head>
+<body>
+    <h2>요소 제어</h2>
+    <hr>
+
+    <ul id="list">
+        
+    </ul>
+    <button id="btn1">add</button>
+    <button id="btn2">remove</button>
+    <button id="btn3"> naver</button>
+    <select name="sel" id="sel">
+        <option value="" selected>선택안함</option>
+        <option value="http://www.naver.com">Naver</option>
+        <option value="http://www.google.com">Google</option>
+        <option value="http://www.kakao.com">Kakao</option>
+    </select>
+
+    <script>
+        let ul = document.getElementById("list");
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let btn3 = document.getElementById("btn3");
+        let sel = document.getElementById("sel");
+        
+        btn1.addEventListener("click", () => {
+            let li = document.createElement("li");  //<li></li> 를 말한다.
+            li.textContent = "new list";
+
+            ul.appendChild(li);
+        });
+
+        btn2.addEventListener("click", () => {
+            // 방법 1.
+            //let li = document.querySelectorAll("#list li");
+            //ul.innerHTML = "";  
+
+            // 방법 2. 탐색하여 하나씩 첫 번째 요소 부터 제거
+            /*
+            while(ul.firstChild) {
+                ul.removeChild(ul.firstChild);
+            }
+            */
+
+            // 방법 3. 최신 방법으로 자식 요소인 li를 공백으로 교체
+            ul.replaceChildren();
+        });
+
+        btn3.addEventListener("click", () => {
+            location.href = "http://www.naver.com";
+        });
+
+        sel.addEventListener("change", () => {
+            let val = sel.value;
+            // location.href = val;
+            if(val) {
+                window.open(val, "_blank");
+            }
+        });
+    </script>
+</body>
+</html>

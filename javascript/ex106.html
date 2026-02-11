@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 06</title>
+</head>
+<body>
+    <h2>배열</h2>
+    <hr>
+    <script>
+        let arr = [100, 200, 300];
+        let obj = {"key1": 100, "key2": 200, "key3": 300};      // JSON 
+
+        console.log(arr);
+        console.log(obj);
+
+        console.log("========== 배열일때 ==========");
+        for(let i=0; i<arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        console.log("========== 객체일때 ==========");
+        // for(String key: obj.keySet)  // 자바로 할땐...
+        for(let key in obj) {
+            console.log(obj[key]);
+        }
+
+        console.log("========== 객체 활용(또는 속성 접근)일때 ==========");
+        let user = {
+            name: "백경서",
+            age: 32,
+            isAdmin: true
+        };
+        console.log(user.name);
+        console.log(user["age"]);
+        user.age = 34;          // 값 변경(setter)
+        user.email = "bks@gmail.com";        // 필드(속성) 추가
+        console.log(user.age);
+        console.log(user["email"]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크립트11</title>
+</head>
+<body>
+    <h2>DOM 탐색 - 내용 변경</h2>
+    <div class="content">
+        <h3 id="title">제목</h3>
+        <ul>
+            <li class="item">항목1</li>
+            <li class="item">항목2</li>
+            <li class="item">항목3</li>
+            <li class="item">항목4</li>
+            <li class="item">항목5</li>
+        </ul>
+        <div class="para">
+            <p>내용1</p>
+            <p>내용2</p>
+            <p>내용3</p>
+        </div>
+    </div>
+    <script>
+        document.querySelector("#title").innerHTML = "타이틀";
+        let els = document.getElementsByClassName("item");      // 배열 객체
+        // 항목1 -> 아이템1, ..., 항목5 -> 아이템5
+        let i = 0;
+        // 배열 객체 -> 일반 배열(스트림): Array.from(배열객체명)
+        Array.from(els).forEach(el => {
+            i++;
+            el.innerText = "아이템"+i;
+        });
+        // 내용1 -> 문단1, ..., 내용3 -> 문단3
+        let ps = document.getElementsByTagName("p");
+        let j = 0;
+        Array.from(ps).forEach(p => {
+            j++;
+            p.innerText = "문단"+j;
+        });
+    </script>
+</body>
+</html>

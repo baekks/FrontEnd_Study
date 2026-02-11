@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트02</title>
+</head>
+<body>
+    <h2>변수와 자료형</h2>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+    <script>
+        // 변수를 선언 - var, let, const
+        var a = 10;         // var - 재정의(O), 값변경(O), 타입 변경(O) => 현재 거의 사용되고 있지 않음
+        let b = 20;         // let - 재정의(X), 값변경(O), 타입 변경(O)
+        const c = 30;       // const - 재정의(X), 값변경(X), 타입 변경(X) => 상수
+        var a = 40;
+        var a= "백경서";
+        b = 50;
+        b = "백시연";
+        // c = 60;
+        // c = "셔니";
+
+        document.getElementById("result1").innerText = a;
+        document.getElementById("result2").innerText = b;
+        document.getElementById("result3").innerText = c;
+        console.log(b);
+        console.log(c);
+
+        // 기본 자료형
+        let num = 10;
+        let str = "Hello";
+        let bool = true;
+        let nullData = null;    // null => 빈 Object 타입
+        let notDefine;          // undefined
+
+        console.log(typeof num);
+        console.log(typeof str);
+        console.log(typeof bool);
+        console.log(typeof nullData);
+        console.log(typeof notDefine);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트10</title>
+</head>
+<body>
+    <h2>DOM 탐색 - 요소 선택</h2>
+    <div class="content">
+        <h3 id="title">제목</h3>
+        <ul>
+            <li class="item">탐색방법1 - getElementById()</li>
+            <li class="item">탐색방법2 - getElementByTagName()</li>
+            <li class="item">탐색방법3 - getElementByClassName()</li>
+            <li class="item">탐색방법4 - querySelector()</li>
+            <li class="item">탐색방법5 - querySelectorAll()</li>
+        </ul>
+    </div>
+    <script>
+        const title = document.getElementById("title");
+        const items = document.getElementsByClassName("item");      // 배열 객체
+        const li = document.getElementsByTagName("li");
+        const el = document.querySelector("#title");
+        const els = document.querySelectorAll(".item");
+
+        console.log(title.innerText);
+        console.log(items);
+        console.log(items[0].innerText);
+        console.log(li);
+        console.log(li[1].innerText);
+        console.log(el);
+        console.log(els);
+
+        els.forEach(i => {  // 화살표 함수(Arrow Function)
+            console.log(i.textContent);
+        });
+    </script>
+</body>
+</html>

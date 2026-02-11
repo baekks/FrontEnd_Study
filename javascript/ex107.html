@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트07</title>
+</head>
+<body>
+    <h2>스코프(Scope)</h2>
+    <p>
+        메서드(함수)나 코드 블록 안에서 선언된 변수를 지역 변수(Local Variable)라고 하며, 
+        그 밖에서 선언된 변수를 전역 변수(Global Variable)라고 합니다.
+    </p>
+    <script>
+        let x = 10;
+        function test() {
+            let x = 20;
+            console.log("x=" + x);
+        }
+        test();
+        console.log("x2= "+x);
+        // console.log("y=" + y);
+
+        // var는 호이스팅(Hoisting) 문제가 발생하므로 let, const를 사용하라
+        console.log(a);
+        var a = 10;     // undefined
+
+        console.log(b); // ERROR => 프로그래밍상 절차가 뒤 바뀐 것이므로 출력 결과
+        let b = 10;     // 이러므로 반드시 let을 사용해야 함
+    </script>
+</body>
+</html>
